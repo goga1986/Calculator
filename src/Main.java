@@ -21,9 +21,7 @@ public class Main {
         String leftArg = input.substring(0, operIndex).trim();              // Определяем значения левого и правого аргумента
         String rightArg = input.substring(operIndex + 1).trim();  // относительно операнда
 
-        boolean Arabic;
         if (leftArg.matches("[\\d]{1,2}") && rightArg.matches("[\\d]{1,2}")) { //проверяем соответствует ли регулярному выражению левый и правый аргумент согласно маске и так же в одной системе счисления
-            Arabic = false;
         } else {
             throw new Exception("Слева и справа должны быть арабские цифры одновременно в диапозоне от 1 до 10");
         }
