@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main2 {
     private static int RomanToArabic(String roman) { //Задаем эквивалент римской системе счисления согласно арабской если не соответствует то возвращаем значение переменной RomanToArabic -1
         if (roman.equals("I")) {
@@ -53,7 +52,6 @@ public class Main2 {
         } else if (cnt > 1){
             throw new Exception("Вы ввели более 1 символа операции (+,-,*,/)");
         }
-
         String leftArg = input.substring(0, operIndex).trim();              // Определяем значения левого и правого аргумента
         String rightArg = input.substring(operIndex + 1).trim();  // относительно операнда
 
@@ -88,7 +86,6 @@ public class Main2 {
                 result = leftNum / rightNum;
                 break;
         }
-
         if (isRome && result <= 0) { //проверяем если переменная isRome= true и результат < 0 то выполняем условие
             throw new Exception("В римской системе счисления числа должны быть больше >= 1");
         } else if (isRome) {
@@ -97,7 +94,6 @@ public class Main2 {
             return "Ответ (В арабской системе счисления):" + result; //выводим результат в арабской системе счасления
         }
     }
-
     public static void main(String[] args) {
         // Выводим результат в консоль
         System.out.println("Введите выражение используя числа от 1 до 10 римские или арабские");
