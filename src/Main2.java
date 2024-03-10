@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class Main2 {
-
-
     public static String calc(String input) throws Exception {             // После ввода строки строки определяем положение операндов поиском по строке
         int cnt = 0;                      // и так же устанавливаем значение переменной cnt (количество операндов)
         int operIndex = -1;
@@ -23,11 +21,11 @@ public class Main2 {
         String leftArg = input.substring(0, operIndex).trim();              // Определяем значения левого и правого аргумента
         String rightArg = input.substring(operIndex + 1).trim();  // относительно операнда
 
-        boolean isRome;
+        boolean Arabic;
         if (leftArg.matches("[\\d]{1,2}") && rightArg.matches("[\\d]{1,2}")) { //проверяем соответствует ли регулярному выражению левый и правый аргумент согласно маске и так же в одной системе счисления
-            isRome = false;
+            Arabic = false;
         } else {
-            throw new Exception("Слева и справа должны быть или арабские или римские цифры одновременно в диапозоне от 1 до 10");
+            throw new Exception("Слева и справа должны быть арабские цифры одновременно в диапозоне от 1 до 10");
         }
 
         String oper = input.substring(operIndex, operIndex + 1); // Определяем тип переменной
@@ -59,7 +57,7 @@ public class Main2 {
 
     public static void main(String[] args) {
         // Выводим результат в консоль
-        System.out.println("Введите выражение используя числа от 1 до 10 римские или арабские");
+        System.out.println("Введите выражение используя числа от 1 до 10 или арабские");
         String expr = new Scanner(System.in).nextLine();
         try {
             System.out.println(calc(expr));
